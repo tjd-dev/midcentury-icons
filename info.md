@@ -10,23 +10,17 @@ A curated collection of midcentury modern design icons for Home Assistant
 
 # Install
 
- 1. Add the following to the `frontend` section of your `configuration.yaml`
+Install through HACS as a custom integration. No additional configuration needed!
 
-  ```yaml
-frontend:
-  extra_module_url:
-    - /local/community/midcentury-icons/midcentury-icons.js
-```
-2. (optional) Or add the following to your lovelace configuration using the Raw Config editor under Configure UI or ui-lovelace.yaml if using YAML mode.
-
-```yaml
-resources:
-  - type: js
-    url:  /local/community/midcentury-icons/midcentury-icons.js
-```
+1. Go to HACS → Integrations
+2. Click the 3 dots menu → Custom repositories
+3. Add repository: `https://github.com/tjd-dev/midcentury-icons`
+4. Category: Integration
+5. Install the integration
+6. Restart Home Assistant
 
 # Use
-you can use icons by entering the prefix `mci:`
+You can use icons by entering the prefix `mci:`
 
 Example of integration in the card
 
@@ -40,7 +34,7 @@ title: Midcentury Icons
 type: entities
 ```
 
-A system restart is required after this step
+No manual configuration.yaml setup required - the integration handles everything automatically!
 
 # Icons Available
-See the full list on [Github](https://github.com/timothydolan/midcentury-icons#icons-available).
+See the full list on [Github](https://github.com/tjd-dev/midcentury-icons#icons-available).

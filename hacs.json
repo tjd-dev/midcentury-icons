@@ -1,5 +1,5 @@
 {
     "name": "Midcentury Icons",
     "render_readme": true,
-    "filename": "midcentury-icons.js"
+    "content_in_root": true
 }

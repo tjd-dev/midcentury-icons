@@ -1,8 +1,8 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/integration)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/timothydolan/midcentury-icons)](https://github.com/timothydolan/midcentury-icons/releases/latest)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/tjd-dev/midcentury-icons)](https://github.com/tjd-dev/midcentury-icons/releases/latest)
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
-![GitHub file size in bytes](https://img.shields.io/github/size/timothydolan/midcentury-icons/dist/midcentury-icons.js?label=plugin%20size)
-![GitHub last commit](https://img.shields.io/github/last-commit/timothydolan/midcentury-icons)
+![GitHub file size in bytes](https://img.shields.io/github/size/tjd-dev/midcentury-icons/dist/midcentury-icons.js?label=plugin%20size)
+![GitHub last commit](https://img.shields.io/github/last-commit/tjd-dev/midcentury-icons)
 
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
@@ -18,11 +18,9 @@ A curated collection of midcentury modern design icons for Home Assistant
 
 # Icon Requests
 
-Want an icon? Open an [icon request](https://github.com/timothydolan/midcentury-icons/issues/new) or contribute to the project.
+Want an icon? Open an [icon request](https://github.com/tjd-dev/midcentury-icons/issues/new) or contribute to the project.
 -  Provide a **svg file** of your request along with the name of the icon.
--  For those who made their own icons, open pull requests on the **[main branch](https://github.com/timothydolan/midcentury-icons/pulls)**.
-
-### Make sure to install `midcentury-icons.js` into `configuration.yaml` or `ui-lovelace.yaml`
+-  For those who made their own icons, open pull requests on the **[main branch](https://github.com/tjd-dev/midcentury-icons/pulls)**.
 
 ## Available Icons
 
@@ -30,51 +28,22 @@ To view all the available icons you can browse the icon-svg directory.
 
 # Installation Methods
 
-#### HACS
+#### HACS (Recommended)
 
-We recommend installing Midcentury Icons via [Home Assistant Community Store](https://hacs.xyz)
+1. Go to HACS → Integrations
+2. Click the 3 dots menu → Custom repositories  
+3. Add repository: `https://github.com/tjd-dev/midcentury-icons`
+4. Category: **Integration**
+5. Click Add and install the integration
+6. Restart Home Assistant
 
-After installing through HACS:
-1. Add the following lines to your `configuration.yaml`
-
-    ```yaml
-    frontend:
-      extra_module_url:
-        - /local/community/midcentury-icons/midcentury-icons.js
-    ```
-
-2. (Optional) YAML mode users. Add the following to your lovelace configuration using the Raw Config editor under Configure UI or ui-lovelace.yaml.
-
-    ```yaml
-    resources:
-      - type: js
-        url: /local/community/midcentury-icons/midcentury-icons.js
-    ```
+**No additional configuration needed!** The integration automatically registers the icons.
 
 #### Manual Installation
 
-To add custom repositories please follow [this guide](https://hacs.xyz/docs/faq/custom_repositories/). Set URL to `https://github.com/timothydolan/midcentury-icons` and category to `Lovelace`.
-
-1. Download `midcentury-icons.js` file from the [latest release](/releases/latest).
-2. Copy the `midcentury-icons.js` file into `<config>/www/` the directory where your `configuration.yaml` resides.
-
-3. Add the following to the `frontend` section of your `configuration.yaml`
-
-    ```yaml
-    frontend:
-      extra_module_url:
-        - /local/midcentury-icons.js
-    ```
-
-4. (Optional) YAML mode users. Add the following to your lovelace configuration using the Raw Config editor under Configure UI or ui-lovelace.yaml.
-
-    ```yaml
-    resources:
-      - type: js
-        url: /local/midcentury-icons.js
-    ```
-
-5. Restart Home Assistant.
+1. Download this repository
+2. Copy the entire `midcentury_icons` folder to your `config/custom_components/` directory
+3. Restart Home Assistant
 
 ---
 
@@ -100,45 +69,20 @@ type: entities
 
 # Don't see the icon?
 
-### Cache issue HomeAssistant 2024.1.1
+### Clear Cache
+- Hard reload browser by holding CTRL and pressing F5
+- For Mac, hold ⌘ CMD and ⇧ SHIFT, then press R
 
-Some addons (including official) have had some cache issues since 2024.1.1, here are a few work arounds to try
+### Check Integration
+1. Go to Settings → Devices & Services
+2. Look for "Midcentury Icons" in the integrations list
+3. If not there, restart Home Assistant
 
-1. first go to settings, dashboard and 3 dots click resources, add resource
-
-    ```yaml
-    /hacsfiles/midcentury-icons/midcentury-icons.js?hacstag=366862031202420
-    ```
-
-2. Add this second resource too
-    ```yaml
-    /local/community/midcentury-icons/midcentury-icons.js
-    ```
-
-
-#### Hard Reload (browser cache issue)
-- Reload browser by holding CTRL and pressing F5.
-- For Mac, hold ⌘ CMD and ⇧ SHIFT, then press R.
-
-#### Redownload Integration
-1. From left sidebar, select on *HACS*.
-2. Select on *Integrations*.
-3. From the top header bar (Integrations, Frontend), select *Frontend*.
-4. Search *midcentury-icons* on the search bar.
-5. Select *Midcentury Icons*.
-6. From the top right, select the 3 vertical dots which opens a dropdown menu.
-7. Select *Redownload*.
-8. **Hard reload** browser.
-
-#### Reinstall Integration
-1. Open the dropdown menu from **Step 6** of **Redownload Integration**.
-2. Select *Remove*, then select *Remove* again on the popup.
-3. This should bring you back to /hacs/frontend
-4. From the top right, select the 3 vertical dots which opens a dropdown menu.
-5. Select on *Custom repositories*.
-6. Find *Midcentury Icons* and select it.
-7. On the bottom right, select the big blue *Download* icon.
-8. **Hard reload** browser.
+### Redownload Integration
+1. From HACS → Integrations
+2. Find "Midcentury Icons"
+3. Click the 3 dots → Redownload
+4. Restart Home Assistant
 
 ---
 
@@ -174,7 +118,6 @@ Example svg file below:
   </svg>
 ```
 
-
 ### Modify `midcentury-icons.js` file
 
 Add the following entry to the `var icons` variable (list) of the `midcentury-icons.js` file
@@ -191,12 +134,6 @@ Example entry:
 - `string` = this data can be recovered from the svg file `<path d="M21,12.5 C21,13.33 18.76,...."` In particular you will have to enter only the part of the vector code `"M21,12.5 C21,13.33 18.76"`. 
   - For an example, take a look at the icons already inserted.
 
-(Optional) In case you want to create your own prefix you can edit the last line of the `midcentury-icons.js`
-
-```js
-window.customIconsets["yourprefix"] = getIcon;
-```
-
 ### Contributions and Pull Requests
 After adding your svg icon in `icon-svg`, modifying `midcentury-icons.js`, and updating `README.md.`
-Open pull requests on the **[main branch](https://github.com/timothydolan/midcentury-icons/pulls)**.
+Open pull requests on the **[main branch](https://github.com/tjd-dev/midcentury-icons/pulls)**.

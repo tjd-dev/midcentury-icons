@@ -1,0 +1,62 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Triggers on version tags like v1.2.0, v1.2.1, etc.
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to create releases
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Get version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+      
+      - name: Count icons
+        id: icons
+        run: |
+          # Count icons in the JS file
+          COUNT=$(grep -o '"[a-z-]*":' midcentury-icons.js | wc -l | tr -d ' ')
+          echo "COUNT=$COUNT" >> $GITHUB_OUTPUT
+      
+      - name: Generate release notes
+        id: notes
+        run: |
+          # Get commit messages since last tag
+          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+          if [ -n "$PREV_TAG" ]; then
+            COMMITS=$(git log --pretty=format:"- %s" $PREV_TAG..HEAD)
+          else
+            COMMITS=$(git log --pretty=format:"- %s")
+          fi
+          
+          # Create release notes
+          echo "NOTES<<EOF" >> $GITHUB_OUTPUT
+          echo "## Midcentury Icons ${{ steps.version.outputs.VERSION }}" >> $GITHUB_OUTPUT
+          echo "" >> $GITHUB_OUTPUT
+          echo "### Changes" >> $GITHUB_OUTPUT
+          echo "$COMMITS" >> $GITHUB_OUTPUT
+          echo "" >> $GITHUB_OUTPUT
+          echo "### Stats" >> $GITHUB_OUTPUT
+          echo "- Total icons: ${{ steps.icons.outputs.COUNT }}" >> $GITHUB_OUTPUT
+          echo "" >> $GITHUB_OUTPUT
+          echo "### Installation" >> $GITHUB_OUTPUT
+          echo "Add via HACS → Custom repositories → \`https://github.com/tjd-dev/midcentury-icons\` → Category: Dashboard" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ steps.version.outputs.VERSION }}
+          body: ${{ steps.notes.outputs.NOTES }}
+          files: |
+            midcentury-icons.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

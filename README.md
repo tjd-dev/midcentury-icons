@@ -19,7 +19,11 @@ Midcentury icons use the prefix `mci:`
 | Icon | Usage |
 |------|-------|
 | ![arco-lamp](/icon-svg/arco-lamp.svg) | `mci:arco-lamp` |
+| ![ceiling-globe](/icon-svg/ceiling-globe.svg) | `mci:ceiling-globe` ⚡ |
+| ![nelson-saucer](/icon-svg/nelson-saucer.svg) | `mci:nelson-saucer` |
 | ![nesso-lamp](/icon-svg/nesso-lamp.svg) | `mci:nesso-lamp` |
+
+⚡ = Dual-color icon (globe animates with light state)
 
 ---
 
@@ -80,7 +84,11 @@ Browse the `icon-svg/` directory to see all available icons.
 | Icon | Name |
 |------|------|
 | ![arco-lamp](/icon-svg/arco-lamp.svg) | `arco-lamp` |
+| ![ceiling-globe](/icon-svg/ceiling-globe.svg) | `ceiling-globe` ⚡ |
+| ![nelson-saucer](/icon-svg/nelson-saucer.svg) | `nelson-saucer` |
 | ![nesso-lamp](/icon-svg/nesso-lamp.svg) | `nesso-lamp` |
+
+⚡ = Dual-color icon (globe animates with light state)
 
 ---
 

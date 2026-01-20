@@ -19,6 +19,7 @@ Midcentury icons use the prefix `mci:`
 | Icon | Usage |
 |------|-------|
 | ![arco-lamp](/icon-svg/arco-lamp.svg) | `mci:arco-lamp` |
+| ![nesso-lamp](/icon-svg/nesso-lamp.svg) | `mci:nesso-lamp` |
 
 ---
 
@@ -79,6 +80,7 @@ Browse the `icon-svg/` directory to see all available icons.
 | Icon | Name |
 |------|------|
 | ![arco-lamp](/icon-svg/arco-lamp.svg) | `arco-lamp` |
+| ![nesso-lamp](/icon-svg/nesso-lamp.svg) | `nesso-lamp` |
 
 ---
 

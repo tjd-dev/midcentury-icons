@@ -1,40 +1,39 @@
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs) 
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration) 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
-[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+
 # Midcentury Icons
-A curated collection of midcentury modern design icons for Home Assistant
 
-# Install
+A curated collection of midcentury modern furniture and design icons for Home Assistant.
 
-Install through HACS as a custom integration. No additional configuration needed!
+## Installation
 
-1. Go to HACS → Integrations
-2. Click the 3 dots menu → Custom repositories
-3. Add repository: `https://github.com/tjd-dev/midcentury-icons`
-4. Category: Integration
-5. Install the integration
-6. Restart Home Assistant
+1. Open **HACS**
+2. Click 3 dots (⋮) → **Custom repositories**
+3. Add: `https://github.com/tjd-dev/midcentury-icons`
+4. Category: **Dashboard**
+5. Click **Add**, then download "Midcentury Icons"
+6. **Restart Home Assistant**
+7. Clear browser cache (Ctrl+F5 or Cmd+Shift+R)
 
-# Use
-You can use icons by entering the prefix `mci:`
+## Usage
 
-Example of integration in the card
+Use icons with the `mci:` prefix:
 
 ```yaml
 entities:
-  - entity: light.arco_lamp
-    icon: 'mci:arco-lamp'
+  - entity: light.living_room
+    icon: mci:arco-lamp
     name: Arco Floor Lamp
-show_header_toggle: false
-title: Midcentury Icons
 type: entities
 ```
 
-No manual configuration.yaml setup required - the integration handles everything automatically!
+## Available Icons
 
-# Icons Available
-See the full list on [Github](https://github.com/tjd-dev/midcentury-icons#icons-available).
+| Icon | Name |
+|------|------|
+| arco-lamp | `mci:arco-lamp` |
+
+See full list on [GitHub](https://github.com/tjd-dev/midcentury-icons).

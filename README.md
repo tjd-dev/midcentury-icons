@@ -1,7 +1,7 @@
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/integration)
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/tjd-dev/midcentury-icons)](https://github.com/tjd-dev/midcentury-icons/releases/latest)
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
-![GitHub file size in bytes](https://img.shields.io/github/size/tjd-dev/midcentury-icons/dist/midcentury-icons.js?label=plugin%20size)
+![GitHub file size in bytes](https://img.shields.io/github/size/tjd-dev/midcentury-icons/midcentury-icons.js?label=plugin%20size)
 ![GitHub last commit](https://img.shields.io/github/last-commit/tjd-dev/midcentury-icons)
 
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -10,130 +10,159 @@
 
 # Midcentury Icons
 
-A curated collection of midcentury modern design icons for Home Assistant
+A curated collection of midcentury modern furniture and design icons for Home Assistant.
 
-#### Midcentury icons use the prefix `mci:`
-#### Append Name (of the icon) after `mci:`
-- Example: `mci:arco-lamp` ![Preview](/icon-svg/arco-lamp.svg)
+## Usage
+
+Midcentury icons use the prefix `mci:`
+
+| Icon | Usage |
+|------|-------|
+| ![arco-lamp](/icon-svg/arco-lamp.svg) | `mci:arco-lamp` |
+
+---
+
+# Installation
+
+## HACS (Recommended)
+
+1. Open HACS in Home Assistant
+2. Click the 3 dots menu (⋮) → **Custom repositories**
+3. Add this repository URL: `https://github.com/tjd-dev/midcentury-icons`
+4. Select category: **Dashboard**
+6. Click **Add**
+7. Find "Midcentury Icons" in the list and click **Download**
+8. **Restart Home Assistant**
+9. Clear your browser cache (Ctrl+F5 or Cmd+Shift+R on Mac)
+
+## Manual Installation
+
+1. Download `midcentury-icons.js` from this repository
+2. Copy it to your `config/www/` directory
+3. Add the resource in Home Assistant:
+   - Go to **Settings** → **Dashboards** → **Resources** (3 dots menu)
+   - Click **Add Resource**
+   - URL: `/local/midcentury-icons.js`
+   - Resource type: **JavaScript Module**
+4. Restart Home Assistant
+5. Clear your browser cache
+
+---
+
+# Using the Icons
+
+Once installed, use icons with the `mci:` prefix in any icon field:
+
+```yaml
+# Example entity card
+type: entities
+entities:
+  - entity: light.living_room
+    icon: mci:arco-lamp
+    name: Arco Floor Lamp
+```
+
+```yaml
+# Example button card
+type: button
+entity: light.living_room
+icon: mci:arco-lamp
+name: Arco Lamp
+```
+
+---
+
+# Available Icons
+
+Browse the `icon-svg/` directory to see all available icons.
+
+| Icon | Name |
+|------|------|
+| ![arco-lamp](/icon-svg/arco-lamp.svg) | `arco-lamp` |
+
+---
 
 # Icon Requests
 
-Want an icon? Open an [icon request](https://github.com/tjd-dev/midcentury-icons/issues/new) or contribute to the project.
--  Provide a **svg file** of your request along with the name of the icon.
--  For those who made their own icons, open pull requests on the **[main branch](https://github.com/tjd-dev/midcentury-icons/pulls)**.
+Want an icon? Open an [icon request](https://github.com/tjd-dev/midcentury-icons/issues/new) or contribute to the project!
 
-## Available Icons
-
-To view all the available icons you can browse the icon-svg directory.
-
-# Installation Methods
-
-#### HACS (Recommended)
-
-1. Go to HACS → Integrations
-2. Click the 3 dots menu → Custom repositories  
-3. Add repository: `https://github.com/tjd-dev/midcentury-icons`
-4. Category: **Integration**
-5. Click Add and install the integration
-6. Restart Home Assistant
-
-**No additional configuration needed!** The integration automatically registers the icons.
-
-#### Manual Installation
-
-1. Download this repository
-2. Copy the entire `midcentury_icons` folder to your `config/custom_components/` directory
-3. Restart Home Assistant
+- Provide a reference image or description of the midcentury furniture/design piece
+- For contributions, open a pull request on the **[main branch](https://github.com/tjd-dev/midcentury-icons/pulls)**
 
 ---
 
-# User Manual
+# Troubleshooting
 
-#### Midcentury icons use the prefix `mci:`
-#### Append Name (of the icon) after `mci:`
-- Example: `mci:arco-lamp` ![Preview](/icon-svg/arco-lamp.svg)
+## Icons not showing?
 
-Example of midcentury icons in a lovelace card:
+### 1. Clear Browser Cache
+- **Windows/Linux:** Hold `Ctrl` and press `F5`
+- **Mac:** Hold `⌘ Cmd` + `⇧ Shift` and press `R`
 
-```yaml
-entities:
-  - entity: light.arco_lamp
-    icon: 'mci:arco-lamp'
-    name: Arco Floor Lamp
-show_header_toggle: false
-title: Midcentury Icons
-type: entities
-```
+### 2. Check Resource is Loaded
+1. Open browser Developer Tools (F12)
+2. Go to **Console** tab
+3. Look for: `MIDCENTURY-ICONS v1.0.0 loaded`
+4. If not present, the resource isn't loading
 
----
+### 3. Verify HACS Installation
+1. Go to **HACS** → **Frontend**
+2. Confirm "Midcentury Icons" is listed
+3. If not, reinstall via HACS
 
-# Don't see the icon?
-
-### Clear Cache
-- Hard reload browser by holding CTRL and pressing F5
-- For Mac, hold ⌘ CMD and ⇧ SHIFT, then press R
-
-### Check Integration
-1. Go to Settings → Devices & Services
-2. Look for "Midcentury Icons" in the integrations list
-3. If not there, restart Home Assistant
-
-### Redownload Integration
-1. From HACS → Integrations
-2. Find "Midcentury Icons"
-3. Click the 3 dots → Redownload
-4. Restart Home Assistant
+### 4. Check Lovelace Resources
+1. Go to **Settings** → **Dashboards**
+2. Click 3 dots (⋮) → **Resources**
+3. Verify the midcentury-icons.js resource exists
+4. If using HACS, the resource path is: `/hacsfiles/midcentury-icons/midcentury-icons.js`
 
 ---
 
-# Developer Workflow
+# Contributing
 
-### Make your own `svg` icon
+## Creating a New Icon
 
-- To make an icon in svg format you can use different programs starting from illustrator, inkview, or [Inkscape](https://inkscape.org/).
-- Verify `svg` icons are set properly by using text editor of your choice ([Notepad++](https://notepad-plus-plus.org/), Notepad, or Visual Studio Code).
-- The size of the icons must be **24px by 24px**.
-- The `svg` code must contain **viewbox**. No transform, translate, or scale.
-- Make sure to add color: **#44739e**. Every midcentury icon uses this color.
-- Once done, add the svg file in the folder `icon-svg` found in the root of the repo.
+### 1. Create the SVG file
 
-Example svg file below:
+- Use [Inkscape](https://inkscape.org/), Illustrator, or similar
+- Canvas size: **24px × 24px**
+- ViewBox: `0 0 24 24`
+- Single path with `fill="currentColor"` (allows Home Assistant theming)
+- No transforms, translates, or scales
+
+Example SVG structure:
 
 ```svg
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<!-- path d="..." is unique for each icon -->
-
-<svg
-   width="24"
-   height="24"
-   viewBox="0 0 24 24"
-   version="1.1"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-   <path
-     style="fill:#44739e"
-     d="..."
-    \>
-  </svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M..." fill="currentColor"/>
+</svg>
 ```
 
-### Modify `midcentury-icons.js` file
+### 2. Add icon to the repository
 
-Add the following entry to the `var icons` variable (list) of the `midcentury-icons.js` file
+1. Save your SVG to `icon-svg/your-icon-name.svg`
+2. Extract the path `d` attribute from your SVG
+3. Add the icon to `midcentury-icons.js`:
 
-Example entry:
-
-```js
-"arco-lamp": [0, 0, 24.0, 24.0, "string"]
+```javascript
+const ICONS = {
+  "arco-lamp": "M10.289...",
+  "your-icon-name": "M..."  // Add your path here
+};
 ```
 
-- `arco-lamp` = svg icon name used for `mci:`
-- `0, 0, 24.0, 24.0` = this data can be recovered from the svg file `viewBox="0 0 24 24"`
-  -  ***If this data is not present, you can leave the one indicated by me.***
-- `string` = this data can be recovered from the svg file `<path d="M21,12.5 C21,13.33 18.76,...."` In particular you will have to enter only the part of the vector code `"M21,12.5 C21,13.33 18.76"`. 
-  - For an example, take a look at the icons already inserted.
+### 3. Submit a Pull Request
 
-### Contributions and Pull Requests
-After adding your svg icon in `icon-svg`, modifying `midcentury-icons.js`, and updating `README.md.`
-Open pull requests on the **[main branch](https://github.com/tjd-dev/midcentury-icons/pulls)**.
+Open a PR on the [main branch](https://github.com/tjd-dev/midcentury-icons/pulls) with:
+- The new SVG file
+- Updated `midcentury-icons.js`
+- Updated README icon table
+
+---
+
+# License
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]

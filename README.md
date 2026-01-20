@@ -1,13 +1,3 @@
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/tjd-dev/midcentury-icons)](https://github.com/tjd-dev/midcentury-icons/releases/latest)
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
-![GitHub file size in bytes](https://img.shields.io/github/size/tjd-dev/midcentury-icons/midcentury-icons.js?label=plugin%20size)
-![GitHub last commit](https://img.shields.io/github/last-commit/tjd-dev/midcentury-icons)
-
-[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
-[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
-[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
-
 # Midcentury Icons
 
 A curated collection of midcentury modern furniture and design icons for Home Assistant.
@@ -89,16 +79,6 @@ Browse the `icon-svg/` directory to see all available icons.
 | ![nesso-lamp](/icon-svg/nesso-lamp.svg) | `nesso-lamp` |
 
 ⚡ = Dual-color icon (globe animates with light state)
-
----
-
-# Icon Requests
-
-Want an icon? Open an [icon request](https://github.com/tjd-dev/midcentury-icons/issues/new) or contribute to the project!
-
-- Provide a reference image or description of the midcentury furniture/design piece
-- For contributions, open a pull request on the **[main branch](https://github.com/tjd-dev/midcentury-icons/pulls)**
-
 ---
 
 # Troubleshooting

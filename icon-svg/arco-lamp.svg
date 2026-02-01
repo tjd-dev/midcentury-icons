@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-  <!-- Dome shade -->
-  <path d="M2 13C2 9.5 4.5 7 8 7V13C8 14.7 6.7 16 5 16C3.3 16 2 14.7 2 13Z" fill="currentColor"/>
-  <!-- Curved arm + pole + base as one piece -->
-  <path d="M7 8C8 4.5 11.5 2 16 2H19C20.1 2 21 2.9 21 4V19H23V22H14V19H19V4H17C13 4 10 6 9 9C10 10 10.5 11 10.5 13H8V10C8 9 7.5 8.5 7 8Z" fill="currentColor"/>
+  <!-- Semi-bowl lamp shade -->
+  <path d="M2 11C2 8 4 6 7 6C7 6 7 9 7 11C7 12 6.5 13 5 13H4C2.9 13 2 12.1 2 11Z" fill="currentColor"/>
+  <!-- Long sweeping arc arm -->
+  <path d="M6 7C7 3.5 11 1 16 1C18 1 19.5 1.5 20.5 2.5C21.5 3.5 22 5 22 7L22 10L19 10L19 7C19 5.5 18.7 4.5 18 4C17.3 3.5 16 3.5 15 4C12 5.5 10 8 9.5 11L9.5 13L6.5 13C6.5 13 6.5 10 6 7Z" fill="currentColor"/>
+  <!-- Rectangular base with circular punch hole -->
+  <path d="M14 17H23V23H14V17ZM18.5 20C18.5 19.2 17.8 18.5 17 18.5C16.2 18.5 15.5 19.2 15.5 20C15.5 20.8 16.2 21.5 17 21.5C17.8 21.5 18.5 20.8 18.5 20Z" fill="currentColor" fill-rule="evenodd"/>
+  <!-- Vertical connection from arc to base -->
+  <path d="M17 10H20V17H17V10Z" fill="currentColor"/>
 </svg>
